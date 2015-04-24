@@ -1,8 +1,7 @@
 library(shiny)
 library(zoo)
 
-if(!exists("gfpath")) 
-  gfpath <- "C:/Software/GenForm/GenForm.exe"
+
 
 
 sbPanel <- sidebarPanel(
@@ -249,4 +248,16 @@ server <- function(input, output, session)
 
 }
 
+if(!exists("gfpath")){
+  message("-----------------------------------------------------")
+  message("Path to GenForm.exe is not set!")
+  message("Before running this shiny app, set the GenForm path like this:")
+  message("gfpath <- \"C:/Software/GenForm/GenForm.exe\" ")
+  #gfpath <- "C:/Software/GenForm/GenForm.exe"
+}
+message("-----------------------------------------------------")
+message("Ignore all warnings and errors here. They are normal.")
+message("-----------------------------------------------------")
 shinyApp(server=server, ui=ui)
+
+
