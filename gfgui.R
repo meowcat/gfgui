@@ -1,7 +1,8 @@
 library(shiny)
 library(zoo)
 
-gfpath <- "C:/Software/GenForm/GenForm.exe"
+if(!exists("gfpath")) 
+  gfpath <- "C:/Software/GenForm/GenForm.exe"
 
 
 sbPanel <- sidebarPanel(
