@@ -240,9 +240,9 @@ server <- function(input, output, session)
     ms2 <- r.ms2()
     msms <- msmsTable()
     
-    plot(Intensity ~ m.z, data=ms2, type='h', col="black")
+    plot(ms2[,2] ~ ms2[,1], data=ms2, type='h', col="black")
     abline(v=msms$mz, col="green")
-    lines(Intensity ~ m.z, data=ms2, type='h', col="black")
+    lines(ms2[,2] ~ ms2[,1], data=ms2, type='h', col="black")
   })
 
 
